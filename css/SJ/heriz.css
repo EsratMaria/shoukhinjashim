@@ -1,0 +1,285 @@
+/* Heriz Collection Styles */
+
+/* Hero Banner */
+.hero-banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    vertical-align: bottom;
+}
+
+.hero-label {
+    position: absolute;
+    right: 10%;
+    bottom: 15%;
+    text-align: right;
+    color: white;
+}
+
+.label-text {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-label h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 5px 0;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+/* Collection Info */
+.collection-info {
+    max-width: 800px;
+    margin: 50px auto 40px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.collection-info h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.collection-info h2 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    font-weight: normal;
+}
+
+.collection-info p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Products Display */
+.products-display {
+    max-width: 900px;
+    margin: 0 auto 50px;
+    padding: 0 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-image {
+    position: relative;
+    padding-bottom: 150%; /* Maintain aspect ratio like in autonoma.css */
+    overflow: hidden;
+}
+
+.product-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-image:hover img {
+    transform: scale(1.05);
+}
+
+.product-details {
+    margin-top: 12px;
+    padding-left: 10px;
+    text-align: left;
+}
+
+.product-status {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.product-name {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.product-price {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.assistance-link {
+    display: inline-block;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: opacity 0.2s;
+}
+
+.assistance-link:hover {
+    opacity: 0.7;
+}
+
+/* Call to Action Section */
+.cta-section {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-content p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.cta-button {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 12px 30px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .product-grid {
+        gap: 25px;
+    }
+    
+    .hero-label {
+        right: 5%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-label h2 {
+        font-size: 2rem;
+    }
+    
+    .collection-info h1 {
+        font-size: 1.8rem;
+    }
+    
+    .collection-info h2 {
+        font-size: 0.95rem;
+    }
+    
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .cta-content p {
+        font-size: 0.95rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-label {
+        right: 5%;
+        bottom: 10%;
+    }
+    
+    .label-text {
+        font-size: 0.75rem;
+    }
+    
+    .hero-label h2 {
+        font-size: 1.5rem;
+    }
+    
+    .subtitle {
+        font-size: 0.875rem;
+    }
+    
+    .collection-info {
+        margin: 30px auto 20px;
+    }
+    
+    .collection-info h1 {
+        font-size: 1.6rem;
+    }
+    
+    .collection-info h2 {
+        font-size: 0.9rem;
+    }
+    
+    .collection-info p {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+    
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .product-details {
+        margin-top: 8px;
+        padding-left: 5px;
+    }
+    
+    .product-status, 
+    .product-name, 
+    .product-price {
+        font-size: 0.8rem;
+        margin-bottom: 4px;
+    }
+    
+    .assistance-link {
+        font-size: 0.8rem;
+    }
+    
+    .cta-section {
+        padding: 30px 15px;
+    }
+    
+    .cta-content p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+    
+    .cta-button {
+        padding: 10px 25px;
+        font-size: 0.85rem;
+    }
+}

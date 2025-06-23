@@ -1,0 +1,229 @@
+/* Autonoma Collection Page Styles */
+
+/* Collection hero section */
+.collection-hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    position: relative;
+    line-height: 0;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+.collection-label {
+    position: absolute;
+    right: 10%;
+    bottom: 15%;
+    text-align: right;
+    color: white;
+    z-index: 5;
+}
+
+.collection-category {
+    font-size: 0.875rem;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.collection-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+.collection-subtitle {
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+/* Collection description */
+.collection-description {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.collection-description p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Collection gallery */
+.collection-gallery {
+    max-width: 1200px;
+    margin: 0 auto 70px;
+    padding: 0 20px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.gallery-item {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.gallery-image {
+    position: relative;
+    padding-bottom: 150%;
+    overflow: hidden;
+}
+
+.gallery-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-image:hover img {
+    transform: scale(1.05);
+}
+
+.product-details {
+    margin-top: 12px;
+    padding-left: 10px;
+    text-align: left;
+}
+
+.product-status {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.product-name {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.product-price {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.assistance-link {
+    display: inline-block;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: opacity 0.2s;
+}
+
+.assistance-link:hover {
+    opacity: 0.7;
+}
+
+/* Responsive design */
+@media screen and (max-width: 1200px) {
+    .collection-label {
+        right: 5%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .gallery-grid {
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .collection-title {
+        font-size: 2rem;
+    }
+    .collection-label {
+        bottom: 10%;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        row-gap: 5px; /* Reduce vertical gap on mobile */
+    }
+    
+    .gallery-item {
+        margin-bottom: 20px;
+    }
+    
+    .collection-description {
+        margin: 40px auto;
+    }
+    
+    .product-details {
+        margin-top: 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .collection-label {
+        right: 5%;
+        bottom: 8%;
+    }
+    
+    .collection-category {
+        font-size: 0.75rem;
+    }
+    
+    .collection-title {
+        font-size: 1.5rem;
+    }
+    
+    .collection-subtitle {
+        font-size: 0.875rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        row-gap: 0; /* Minimize vertical gap on small mobile */
+    }
+    
+    .gallery-item {
+        margin-bottom: 15px;
+    }
+    
+    .collection-description {
+        margin: 30px auto;
+    }
+    
+    .collection-description p {
+        font-size: 0.9rem;
+    }
+    
+    .product-details {
+        padding-left: 5px;
+    }
+    
+    .product-status, 
+    .product-name, 
+    .product-price {
+        font-size: 0.8rem;
+        margin-bottom: 4px;
+    }
+    
+    .assistance-link {
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,937 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #000;
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    padding: 1.25rem 0;
+    text-align: center;
+    background-color: white;
+    position: relative;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    margin-bottom: 0.625rem;
+    text-align: center;
+    flex: 1;
+}
+
+.logo img {
+    max-height: 5rem;
+    width: auto;
+}
+
+/* Base Navigation Styles */
+nav {
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 0.875rem;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul li a.active {
+    font-weight: bold;
+}
+
+.menu-plus {
+    display: none; /* Hidden by default, shown on mobile */
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 1.5rem;
+    cursor: pointer;
+    z-index: 200;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: black;
+}
+
+/* Mobile Menu Header with Close Button and Ship To */
+.mobile-menu-header {
+    display: none;
+    width: 100%;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+.mobile-menu-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #000;
+}
+
+.ship-to-container {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ship-to-selector {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.ship-to-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 180px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 3px;
+    display: none;
+    z-index: 1000;
+    margin-top: 5px;
+}
+
+.ship-to-dropdown.active {
+    display: block;
+}
+
+.ship-to-option {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.3s;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.ship-to-option:hover {
+    background: #f5f5f5;
+}
+
+/* Social Icons in Menu (Mobile) */
+.social-icons-menu {
+    display: flex; /* Ensure it's visible for testing */
+    justify-content: flex-start; /* Align icons to the left */
+    align-items: center; /* Vertically align with other navbar items */
+    gap: 20px;
+    padding: 0 20px; /* Left/right padding to match navbar */
+    border-top: 1px solid #eee;
+    margin-top: auto; /* Optional: keep at bottom of flex container */
+    height: 60px; /* Match height of other navbar/menu items */
+}
+
+.social-icons-menu .social-icon {
+    color: #000;
+    font-size: 25px;
+}
+
+/* Social Icons (Desktop) */
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-icon {
+    color: #000;
+    font-size: 18px;
+}
+
+.desktop-only {
+    display: flex;
+}
+
+
+/* Currency Converter Styles - Improved */
+.currency-converter {
+    position: absolute;
+    right: 70px;
+    top: 20px;
+    z-index: 101;
+}
+
+.currency-selector {
+    cursor: pointer;
+}
+
+.current-currency {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.current-currency img {
+    width: 16px;
+    height: 12px;
+    object-fit: cover;
+}
+
+.currency-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 180px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 3px;
+    display: none;
+    z-index: 1000;
+    margin-top: 10px;
+}
+
+.currency-dropdown.active {
+    display: block;
+}
+
+.currency-option {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.3s;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.currency-option:hover {
+    background: #f5f5f5;
+}
+
+.currency-option img {
+    width: 16px;
+    height: 12px;
+    object-fit: cover;
+}
+
+/* Slideshow Styles */
+.hero {
+    width: 100%;
+    background-color: #FFD1DC;
+    position: relative;
+}
+
+.hero-content {
+    position: relative;
+    width: 100%;
+}
+
+.slideshow-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slideshow-slide {
+    display: none;
+    width: 100%;
+    position: relative;
+}
+
+.slideshow-slide.active {
+    display: block;
+}
+
+.slideshow-slide img {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+.hero-text {
+    position: absolute;
+    right: 10%;
+    bottom: 30%;
+    text-align: right;
+    color: white;
+    z-index: 5;
+}
+
+.collection-name {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.3125rem;
+    letter-spacing: 1px;
+}
+
+.collection-subtitle {
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+/* Updated Slideshow Navigation Dots */
+.slideshow-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Increased spacing between dots from 8px to 15px */
+    z-index: 10;
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #e94e97; /* Pink/magenta color for active dot */
+}
+
+/* Fade animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: 0.4}
+    to {opacity: 1}
+}
+
+/* Brand Info Section */
+.brand-info {
+    padding: 3.75rem 15%;
+    text-align: center;
+}
+
+.brand-info h1 {
+    font-size: 2.375rem;
+    margin-bottom: 1.875rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.brand-description {
+    max-width: 50rem;
+    margin: 0 auto 1.25rem;
+    line-height: 1.8;
+    font-size: 0.875rem;
+    letter-spacing: 0.5px;
+}
+
+.studio-location {
+    font-style: italic;
+    font-size: 0.875rem;
+    color: #555;
+}
+
+/* CTA Section */
+.cta {
+    padding: 3.75rem 1.25rem;
+    text-align: center;
+    background-color: #000;
+    color: white;
+}
+
+.cta-content {
+    max-width: 31.25rem;
+    margin: 0 auto;
+}
+
+.cta p {
+    margin-bottom: 1.5625rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.cta button {
+    padding: 0.75rem 1.5625rem;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    font-size: 0.875rem;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: background-color 0.3s;
+}
+
+.cta button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Submenu Base Styles */
+.main-menu {
+    position: relative;
+}
+
+.has-submenu {
+    position: static;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: white;
+    z-index: 100;
+    padding: 40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.submenu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 90;
+}
+
+.has-submenu.active .submenu,
+.has-submenu.active .submenu-overlay {
+    display: block;
+}
+
+/* Collection Submenu Specific Styles */
+.collection-submenu {
+    padding: 30px 40px;
+}
+
+.submenu-header {
+    display: none; /* Hidden on desktop */
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.submenu-header h2 {
+    font-size: 18px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.back-btn, .close-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px;
+    color: #000;
+}
+
+.collection-category {
+    margin-bottom: 50px;
+}
+
+.collection-category h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Categories container to display categories side by side */
+.categories-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.collection-category {
+    flex: 1;
+    margin-bottom: 30px;
+}
+
+.subcategories {
+    display: flex;
+    gap: 30px;
+}
+
+.subcategory {
+    flex: 1;
+}
+
+.subcategory h4 {
+    font-size: 14px;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+/* FIXED Collection Sliders for all devices */
+.collection-slider {
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.collection-slides {
+    width: 100%;
+}
+
+.collection-slide {
+    width: 100%;
+    position: relative;
+    padding-top: 133%; /* Creates a consistent aspect ratio (4:3) container */
+}
+
+.collection-slide a {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.collection-slide img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures entire image is visible */
+    background-color: transparent;
+}
+
+/* Mobile specific styles */
+.mobile-only {
+    display: none;
+}
+
+/* Footer */
+footer {
+    padding: 2.5rem 1.25rem;
+    background-color: #fff;
+    color: #555;
+    border-top: 1px solid #eee;
+}
+
+.footer-container {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 150px;
+    margin-bottom: 1.5rem;
+}
+
+.footer-section h3 {
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+    color: #222;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 0.75rem;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #000;
+}
+
+.footer-container p {
+    text-align: center;
+    color: #888;
+    font-size: 0.75rem;
+    margin-bottom: 0;
+}
+
+/* Price elements that will be converted */
+.product-price {
+    position: relative;
+    transition: color 0.3s;
+}
+
+.product-price.converting {
+    color: #e94e97;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 1024px) {
+    .hero-text {
+        right: 5%;
+        bottom: 20%;
+    }
+    
+    .brand-info {
+        padding: 3.75rem 10%;
+    }
+}
+
+/* Hover functionality for desktop */
+@media (min-width: 769px) {
+    .has-submenu:hover .submenu {
+        display: block;
+    }
+    
+    .social-icons-menu {
+        display: none;
+    }
+    .footer-section h3 {
+        cursor: default;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    header {
+        padding: 1rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo {
+        flex: 0 0 auto;
+        margin: 0 auto;
+    }
+    
+
+    /* Rest of mobile styles */
+    .currency-converter {
+        display: none; /* Hide on mobile as it's now in the menu */
+    }
+    
+    .desktop-only {
+        display: none;
+    }
+    
+    /* Mobile Menu Styling */
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        padding-bottom: 60px; /* Space for social icons */
+    }
+    
+    nav.active {
+        transform: translateX(0);
+    } 
+    
+    .mobile-menu-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .social-icons-menu {
+        display: flex;
+        margin-top: auto; /* Push to bottom */
+    }
+    
+    nav ul {
+        padding: 30px 20px 0 20px;
+    }
+    
+    nav ul li {
+        width: 100%;
+        border-bottom: none; /* Remove the border */
+        margin-bottom: 25px; /* Add space between items */
+    }
+    
+    nav ul li a {
+        padding: 0; /* Remove padding */
+        font-size: 16px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        letter-spacing: 0.5px; /* Slight letter spacing for clean look */
+    }
+    
+    .menu-plus {
+        display: inline-block;
+    }
+    
+    .hero-text {
+        right: 5%;
+        bottom: 15%;
+    }
+    
+    .collection-name {
+        font-size: 1.5rem;
+    }
+    
+    .collection-subtitle {
+        font-size: 0.875rem;
+    }
+    
+    .brand-info h1 {
+        font-size: 2rem;
+    }
+    
+    .footer-container {
+        justify-content: flex-start;
+    }
+    
+    .footer-section {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    
+    .footer-section h3 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        padding: 0.5rem 0;
+        margin-bottom: 0;      /* Remove space after each section */
+        position: relative;
+        user-select: none;
+        font-size: 0.9rem;
+    }
+    
+    /* Arrow indicator */
+    .footer-section h3::after {
+        content: '\f078';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        border: none;
+        transition: transform 0.3s ease;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%) rotate(0deg);
+        font-size: 12px;
+    }
+    
+    /* Rotate arrow when section is collapsed */
+    .footer-section.collapsed h3::after {
+        transform: translateY(-50%) rotate(180deg);
+    }
+    
+    /* Hide content when section is collapsed */
+    .footer-section ul {
+        max-height: 500px;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    
+    .footer-section.collapsed ul {
+        max-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .footer-section ul li {
+        margin-bottom: 0.5rem;
+    }
+    
+    .footer-section:last-child {
+        border-bottom: none;
+    }
+    /* Mobile menu submenu adjustments */
+    .has-submenu {
+        position: relative;
+    }
+    
+    .submenu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100vh;
+        width: 100%;
+        padding: 20px;
+        overflow-y: auto;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        display: block; /* Important: keep the submenu structure in DOM */
+        opacity: 0;
+        visibility: hidden;
+        z-index: 999;
+    }
+    
+    .has-submenu.active .submenu {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .mobile-only {
+        display: flex;
+    }
+    
+    .submenu-header {
+        display: flex;
+        position: sticky;
+        top: 0;
+        background: white;
+        z-index: 2;
+        padding: 15px 0;
+    }
+    
+    .submenu-content {
+        padding: 15px 0;
+    }
+    
+    .categories-container {
+        display: block;
+        margin-top: 20px;
+    }
+    
+    .collection-category {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    
+    .subcategories {
+        display: block;
+    }
+    
+    .subcategory {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    /* Adjust collection slides for mobile */
+    .collection-slide {
+        padding-top: 120%; /* Slightly shorter aspect ratio for mobile */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo img {
+        max-height: 3.75rem;
+    }
+    
+    .hero-text {
+        right: 5%;
+        bottom: 10%;
+    }
+    
+    .collection-name {
+        font-size: 1.25rem;
+    }
+    
+    .collection-subtitle {
+        font-size: 0.75rem;
+    }
+    
+    .brand-info {
+        padding: 2.5rem 1.25rem;
+    }
+    
+    .brand-info h1 {
+        font-size: 1.75rem;
+        margin-bottom: 1.25rem;
+    }
+    
+    .footer-section {
+        flex: 0 0 100%;
+    }
+    
+    /* Adjust dot size and spacing for mobile */
+    .slideshow-dots {
+        gap: 12px; /* Slightly reduced gap for mobile but still spacious */
+    }
+    
+    .dot {
+        height: 6px;
+        width: 6px;
+    }
+    
+    .collection-category h3 {
+        font-size: 16px;
+    }
+    
+    .subcategory h4 {
+        font-size: 13px;
+    }
+    
+}

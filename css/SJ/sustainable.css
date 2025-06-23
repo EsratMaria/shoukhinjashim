@@ -1,0 +1,409 @@
+/* Sustainable Collection Page Styles */
+
+/* Apply monochrome theme to the page */
+.sustainable-page {
+    color: #333;
+}
+
+/* Collection hero section */
+.sustainable-hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* Removed background-color to prevent extra colored space */
+}
+
+.sustainable-hero .hero-image {
+    width: 100%;
+    position: relative;
+    line-height: 0; /* Removes any inline spacing */
+}
+
+.sustainable-hero .hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 100%;
+    vertical-align: bottom; /* Prevents bottom gap */
+}
+
+.sustainable-hero .collection-label {
+    position: absolute;
+    right: 10%;
+    bottom: 15%;
+    text-align: right;
+    color: white;
+    z-index: 5;
+}
+
+.sustainable-hero .collection-category {
+    font-size: 0.875rem;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.sustainable-hero .collection-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+.sustainable-hero .collection-subtitle {
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+/* Collection description with side image - UPDATED FOR ALIGNMENT */
+.sustainable-description {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.description-container {
+    display: flex;
+    gap: 40px;
+    align-items: stretch; /* Changed to stretch to match heights */
+}
+
+.description-image {
+    flex: 0 0 45%;
+    position: relative;
+    display: flex; /* Added to allow vertical stretching */
+}
+
+.description-image img {
+    width: 100%;
+    height: 100%; /* Changed to 100% to fill the container */
+    object-fit: cover; /* Makes sure image maintains aspect ratio while filling */
+    display: block;
+}
+
+.sustainable-content {
+    flex: 0 0 50%;
+    display: flex; /* Added to create vertical structure */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Distribute space evenly */
+}
+
+.sustainable-content h2 {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+}
+
+.sustainable-content p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #444;
+    line-height: 1.8;
+}
+
+.sustainable-content p:last-child {
+    margin-bottom: 0; /* Remove margin from last paragraph to avoid extra space */
+}
+
+/* Collection gallery */
+.sustainable-gallery {
+    max-width: 1200px;
+    margin: 0 auto 70px;
+    padding: 0 20px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    padding-bottom: 125%; /* Standard aspect ratio */
+    overflow: hidden;
+}
+
+.gallery-item.large {
+    grid-column: span 1;
+    padding-bottom: 100%; /* More square-like for large images */
+}
+
+.gallery-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* NEW: Looks Slider Section */
+.looks-slider-section {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+.looks-slider-title {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700; /* Changed to bold */
+    letter-spacing: 2px;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.looks-slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 0 20px; /* Added padding for the arrows */
+}
+
+.looks-slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.look-slide {
+    flex: 0 0 25%; /* Show 4 slides on desktop */
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+
+.look-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 2/3;
+}
+
+/* Redesigned navigation buttons - ALWAYS BLACK */
+.slider-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    pointer-events: none; /* Allow clicks to pass through */
+    padding: 0 10px;
+    z-index: 10;
+}
+
+.slider-nav-button {
+    width: 40px;
+    height: 40px;
+    background-color: #000; /* Changed to black background all the time */
+    border: 1px solid #000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    pointer-events: auto; /* Make buttons clickable */
+    margin: 0 -10px; /* Position buttons outside the slider */
+}
+
+.slider-nav-button:focus {
+    outline: none;
+}
+
+.slider-prev {
+    left: -5px;
+    position: relative;
+}
+
+.slider-next {
+    right: -5px;
+    position: relative;
+}
+
+.slider-nav-button::before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-style: solid;
+    border-width: 2px 2px 0 0;
+    border-color: #fff; /* Changed to white arrows all the time */
+}
+
+.slider-prev::before {
+    transform: rotate(-135deg);
+    margin-left: 3px;
+}
+
+.slider-next::before {
+    transform: rotate(45deg);
+    margin-right: 3px;
+}
+
+/* Responsive design */
+@media screen and (min-width: 1025px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .gallery-item.large {
+        grid-column: span 1;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .sustainable-description {
+        margin: 50px auto;
+    }
+    
+    .description-container {
+        gap: 30px;
+    }
+    
+    .gallery-grid {
+        gap: 15px;
+    }
+    
+    .look-slide {
+        flex: 0 0 33.333%; /* Show 3 slides on medium screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sustainable-hero .collection-title {
+        font-size: 2rem;
+    }
+
+    .sustainable-hero .collection-label{
+        bottom: 10%;
+    }
+    
+    .sustainable-description {
+        margin: 40px auto;
+    }
+    
+    .description-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .description-image {
+        flex: 0 0 100%;
+        /* Set a fixed aspect ratio for the image on mobile */
+        height: auto;
+        padding-bottom: 75%; /* Creates a 4:3 aspect ratio container */
+        overflow: hidden;
+    }
+    
+    .description-image img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .sustainable-content {
+        flex: 0 0 100%;
+    }
+    
+    .sustainable-content h2 {
+        font-size: 1.1rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .look-slide {
+        flex: 0 0 50%; /* Show 2 slides on smaller screens */
+    }
+    
+    .looks-slider-title {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+    
+    .slider-nav-button {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .sustainable-content h2 {
+        font-size: 1rem;
+    }
+    
+    .sustainable-content p {
+        font-size: 0.9rem;
+    }
+    
+    .looks-slider-section {
+        margin: 50px auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sustainable-hero .collection-label {
+        right: 5%;
+        bottom: 8%;
+    }
+    
+    .sustainable-hero .collection-category {
+        font-size: 0.75rem;
+    }
+    
+    .sustainable-hero .collection-title {
+        font-size: 1.5rem;
+    }
+    
+    .sustainable-hero .collection-subtitle {
+        font-size: 0.875rem;
+    }
+    
+    /* Modified to show 2 images side by side */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .gallery-item {
+        padding-bottom: 130%;
+    }
+    
+    .gallery-item.large {
+        grid-column: span 1;
+        padding-bottom: 130%;
+    }
+    
+    .sustainable-description {
+        margin: 30px auto;
+    }
+    
+    .look-slide {
+        flex: 0 0 100%; /* Show 1 slide on very small screens */
+    }
+    
+    .slider-nav-button {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .looks-slider-title {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+}

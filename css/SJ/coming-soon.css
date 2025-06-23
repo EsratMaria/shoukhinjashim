@@ -1,0 +1,146 @@
+/* Coming Soon Page Styles */
+
+.coming-soon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding: 60px 20px;
+    background-color: #f8f8f8;
+}
+
+.coming-soon-content {
+    max-width: 800px;
+    text-align: center;
+}
+
+.coming-soon-content h1 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.divider {
+    width: 50px;
+    height: 1px;
+    background-color: #000;
+    margin: 0 auto 30px;
+}
+
+.coming-soon-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+/* Countdown styles */
+.countdown {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.countdown-item {
+    margin: 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+}
+
+.countdown-item span:first-child {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+
+.countdown-label {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    color: #999;
+}
+
+/* Subscribe section */
+.subscribe-section {
+    margin-top: 40px;
+}
+
+.subscribe-section p {
+    margin-bottom: 20px;
+}
+
+.subscribe-form {
+    display: flex;
+    justify-content: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.subscribe-form input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-right: none;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.subscribe-form button {
+    padding: 12px 20px;
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #000;
+    cursor: pointer;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.subscribe-form button:hover {
+    background-color: #333;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .coming-soon-content h1 {
+        font-size: 2rem;
+    }
+    
+    .countdown {
+        flex-wrap: wrap;
+    }
+    
+    .countdown-item {
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .coming-soon-container {
+        padding: 40px 15px;
+    }
+    
+    .coming-soon-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .countdown-item {
+        min-width: 60px;
+    }
+    
+    .countdown-item span:first-child {
+        font-size: 1.5rem;
+    }
+    
+    .subscribe-form {
+        flex-direction: column;
+    }
+    
+    .subscribe-form input {
+        border-right: 1px solid #ddd;
+        border-bottom: none;
+        margin-bottom: 10px;
+    }
+}

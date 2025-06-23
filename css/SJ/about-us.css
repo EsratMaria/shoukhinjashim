@@ -1,0 +1,110 @@
+/* About Hero Section */
+.about-hero {
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.about-hero h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+/* Designer Profile Section */
+.designer-profile {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.designer-image {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 2rem;
+}
+
+.designer-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(100%);
+}
+
+.designer-quote {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.designer-quote blockquote {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.designer-quote cite {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.designer-story {
+    line-height: 1.8;
+    text-align: center; /* Center align the text */
+    max-width: 700px; /* Constrain width for better readability */
+    margin: 0 auto; /* Center the container */
+}
+
+.designer-story p {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+    .about-hero h1 {
+        font-size: 1.75rem;
+    }
+    
+    .designer-quote blockquote {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about-hero {
+        padding: 2rem 1rem;
+    }
+    
+    .about-hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    .designer-profile {
+        padding: 1rem 1rem 3rem;
+    }
+    
+    .designer-quote blockquote {
+        font-size: 1rem;
+    }
+    
+    .designer-quote cite {
+        font-size: 0.8rem;
+    }
+    
+    .designer-story {
+        line-height: 1.8;
+        text-align: center; /* Center align the text */
+        max-width: 700px; /* Constrain width for better readability */
+        margin: 0 auto; /* Center the container */
+    }
+    
+    .designer-story p {
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+    }
+}
