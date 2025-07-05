@@ -336,7 +336,7 @@ nav ul li a.active {
 }
 
 .dot.active {
-    background-color: #e94e97; /* Pink/magenta color for active dot */
+    background-color: black; /* Pink/magenta color for active dot */
 }
 
 /* Fade animation */
@@ -608,11 +608,15 @@ footer {
     color: #000;
 }
 
-.footer-container p {
+/* Copyright text */
+.footer-container > p {
+    width: 100%;
     text-align: center;
     color: #888;
     font-size: 0.75rem;
-    margin-bottom: 0;
+    margin: 2rem 0 0 0;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
 }
 
 /* Price elements that will be converted */
@@ -750,14 +754,21 @@ footer {
         font-size: 2rem;
     }
     
+    /* Mobile Footer Styles */
     .footer-container {
-        justify-content: flex-start;
+        flex-direction: column;
+        gap: 0;
     }
     
     .footer-section {
-        border-bottom: none;
-        padding-bottom: 0;
+        width: 100%;
+        min-width: 100%;
         margin-bottom: 0;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .footer-section:last-of-type {
+        border-bottom: none;
     }
     
     .footer-section h3 {
@@ -765,55 +776,65 @@ footer {
         justify-content: space-between;
         align-items: center;
         cursor: pointer;
-        padding: 0.5rem 0;
-        margin-bottom: 0;      /* Remove space after each section */
+        padding: 1rem 0;
+        margin-bottom: 0;
         position: relative;
         user-select: none;
-        font-size: 0.9rem;
+        font-size: 0.875rem;
+        letter-spacing: 0.5px;
     }
     
     /* Arrow indicator */
     .footer-section h3::after {
-        content: '\f078';
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
-        border: none;
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 6px solid #222;
         transition: transform 0.3s ease;
         position: absolute;
         right: 0;
         top: 50%;
-        transform: translateY(-50%) rotate(0deg);
-        font-size: 12px;
+        transform: translateY(-50%);
     }
-    
-    /* Rotate arrow when section is collapsed */
-    .footer-section.collapsed h3::after {
+
+    /* Rotate arrow when section is expanded */
+    .footer-section:not(.collapsed) h3::after {
         transform: translateY(-50%) rotate(180deg);
     }
     
     /* Hide content when section is collapsed */
     .footer-section ul {
-        max-height: 500px;
+        max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease, padding 0.3s ease;
-        padding-top: 0;
-        padding-bottom: 0;
-        margin-bottom: 0;
+        padding: 0;
     }
     
-    .footer-section.collapsed ul {
-        max-height: 0;
-        padding-top: 0;
-        padding-bottom: 0;
+    .footer-section:not(.collapsed) ul {
+        max-height: 500px;
+        padding: 0 0 1rem 0;
     }
 
     .footer-section ul li {
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.75rem;
     }
     
-    .footer-section:last-child {
-        border-bottom: none;
+    .footer-section ul li a {
+        font-size: 0.813rem;
+        color: #666;
     }
+    
+    /* Copyright text - centered and smaller on mobile */
+    .footer-container > p {
+        text-align: center;
+        font-size: 0.688rem;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        line-height: 1.5;
+    }
+    
     /* Mobile menu submenu adjustments */
     .has-submenu {
         position: relative;
@@ -912,10 +933,6 @@ footer {
         margin-bottom: 1.25rem;
     }
     
-    .footer-section {
-        flex: 0 0 100%;
-    }
-    
     /* Adjust dot size and spacing for mobile */
     .slideshow-dots {
         gap: 12px; /* Slightly reduced gap for mobile but still spacious */
@@ -934,4 +951,16 @@ footer {
         font-size: 13px;
     }
     
+    /* Footer adjustments for small mobile */
+    .footer-section h3 {
+        font-size: 0.813rem;
+    }
+    
+    .footer-section ul li a {
+        font-size: 0.75rem;
+    }
+    
+    .footer-container > p {
+        font-size: 0.625rem;
+    }
 }

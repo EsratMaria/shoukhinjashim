@@ -1,3 +1,52 @@
+// Toggle share icons
+function toggleShareIcons() {
+    const shareIcons = document.getElementById('socialShareIcons');
+    shareIcons.classList.toggle('active');
+    
+    // Close when clicking outside
+    document.addEventListener('click', function closeShareIcons(e) {
+        if (!e.target.closest('.share-wrapper')) {
+            shareIcons.classList.remove('active');
+            document.removeEventListener('click', closeShareIcons);
+        }
+    });
+}
+
+// Share functions
+function shareOnFacebook(e) {
+    e.preventDefault();
+    const url = encodeURIComponent(window.location.href);
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+}
+
+function shareOnPinterest(e) {
+    e.preventDefault();
+    const url = encodeURIComponent(window.location.href);
+    const description = encodeURIComponent(document.querySelector('.product-header h1').textContent);
+    const image = encodeURIComponent(document.getElementById('mainProductImage').src);
+    window.open(`https://pinterest.com/pin/create/button/?url=${url}&description=${description}&media=${image}`, '_blank');
+}
+
+function shareOnTwitter(e) {
+    e.preventDefault();
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent(document.querySelector('.product-header h1').textContent);
+    window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank');
+}
+
+function shareOnEmail(e) {
+    e.preventDefault();
+    const subject = encodeURIComponent(document.querySelector('.product-header h1').textContent);
+    const body = encodeURIComponent(`Check out this product: ${window.location.href}`);
+    window.location.href = `mailto:?subject=${subject}&body=${body}`;
+}
+
+function shareOnWhatsApp(e) {
+    e.preventDefault();
+    const text = encodeURIComponent(`Check out ${document.querySelector('.product-header h1').textContent}: ${window.location.href}`);
+    window.open(`https://wa.me/?text=${text}`, '_blank');
+}
+
 // Toggle collapsible sections
 function toggleSection(header) {
     const section = header.parentElement;
@@ -393,6 +442,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Initialize unit toggle to show cm by default
 document.addEventListener('DOMContentLoaded', function() {
+    const collapsibleSections = document.querySelectorAll('.collapsible-section');
+    collapsibleSections.forEach(section => {
+        section.classList.remove('active');
+    });
+
     const cmButton = document.querySelector('.unit-toggle button[onclick*="cm"]');
     if (cmButton) {
         toggleUnit('cm');
