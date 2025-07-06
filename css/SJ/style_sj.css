@@ -96,7 +96,7 @@ nav ul li a.active {
 .mobile-menu-header {
     display: none;
     width: 100%;
-    padding: 15px;
+    padding: 15px 20px;
     border-bottom: 1px solid #eee;
     position: relative;
 }
@@ -104,13 +104,14 @@ nav ul li a.active {
 .mobile-menu-close {
     background: none;
     border: none;
-    font-size: 24px;
+    font-size: 28px;
     position: absolute;
-    left: 15px;
+    left: 20px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
     color: #000;
+    line-height: 1;
 }
 
 .ship-to-container {
@@ -118,6 +119,7 @@ nav ul li a.active {
     display: flex;
     align-items: center;
     gap: 10px;
+    font-size: 12px;
 }
 
 .ship-to-selector {
@@ -163,14 +165,14 @@ nav ul li a.active {
 
 /* Social Icons in Menu (Mobile) */
 .social-icons-menu {
-    display: flex; /* Ensure it's visible for testing */
-    justify-content: flex-start; /* Align icons to the left */
-    align-items: center; /* Vertically align with other navbar items */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     gap: 20px;
-    padding: 0 20px; /* Left/right padding to match navbar */
+    padding: 0 20px;
     border-top: 1px solid #eee;
-    margin-top: auto; /* Optional: keep at bottom of flex container */
-    height: 60px; /* Match height of other navbar/menu items */
+    margin-top: auto;
+    height: 60px;
 }
 
 .social-icons-menu .social-icon {
@@ -194,7 +196,6 @@ nav ul li a.active {
 .desktop-only {
     display: flex;
 }
-
 
 /* Currency Converter Styles - Improved */
 .currency-converter {
@@ -321,7 +322,7 @@ nav ul li a.active {
     right: 0;
     display: flex;
     justify-content: center;
-    gap: 25px; /* Increased spacing between dots from 8px to 15px */
+    gap: 25px;
     z-index: 10;
 }
 
@@ -336,7 +337,7 @@ nav ul li a.active {
 }
 
 .dot.active {
-    background-color: black; /* Pink/magenta color for active dot */
+    background-color: black;
 }
 
 /* Fade animation */
@@ -363,12 +364,22 @@ nav ul li a.active {
     font-weight: bold;
 }
 
+/* NEW: Brand image styling */
+.brand-info img {
+    max-width: 800px;
+    width: 70%;
+    height: auto;
+    margin: 0 auto 2rem auto;
+    display: block;
+}
+
 .brand-description {
     max-width: 50rem;
-    margin: 0 auto 1.25rem;
-    line-height: 1.8;
-    font-size: 0.875rem;
-    letter-spacing: 0.5px;
+    margin: 0 auto 1.875rem;  /* Changed from 1.25rem to 1.875rem (30px) */
+    line-height: 1.7;  /* Changed from 1.8 to 1.7 */
+    font-size: 0.95rem;  /* Changed from 0.875rem to 0.95rem */
+    letter-spacing: 0;  /* Changed from 0.5px to 0 */
+    color: #333;  /* Added color to match */
 }
 
 .studio-location {
@@ -453,7 +464,7 @@ nav ul li a.active {
 }
 
 .submenu-header {
-    display: none; /* Hidden on desktop */
+    display: none;
     align-items: center;
     justify-content: space-between;
     padding: 15px 0;
@@ -529,7 +540,7 @@ nav ul li a.active {
 .collection-slide {
     width: 100%;
     position: relative;
-    padding-top: 133%; /* Creates a consistent aspect ratio (4:3) container */
+    padding-top: 133%;
 }
 
 .collection-slide a {
@@ -547,7 +558,7 @@ nav ul li a.active {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Ensures entire image is visible */
+    object-fit: contain;
     background-color: transparent;
 }
 
@@ -639,6 +650,11 @@ footer {
     .brand-info {
         padding: 3.75rem 10%;
     }
+    
+    /* Adjust brand image for tablet */
+    .brand-info img {
+        max-width: 250px;
+    }
 }
 
 /* Hover functionality for desktop */
@@ -671,17 +687,16 @@ footer {
         margin: 0 auto;
     }
     
-
     /* Rest of mobile styles */
     .currency-converter {
-        display: none; /* Hide on mobile as it's now in the menu */
+        display: none;
     }
     
     .desktop-only {
         display: none;
     }
     
-    /* Mobile Menu Styling */
+    /* Mobile Menu Styling - UPDATED */
     nav {
         position: fixed;
         top: 0;
@@ -695,7 +710,6 @@ footer {
         display: flex;
         flex-direction: column;
         overflow-y: auto;
-        padding-bottom: 60px; /* Space for social icons */
     }
     
     nav.active {
@@ -706,35 +720,55 @@ footer {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 20px;
+        margin-bottom: 0;
     }
     
-    .social-icons-menu {
-        display: flex;
-        margin-top: auto; /* Push to bottom */
-    }
-    
+    /* UPDATED Mobile Navigation List */
     nav ul {
-        padding: 30px 20px 0 20px;
+        flex-direction: column;
+        gap: 0;
+        padding: 40px 35px;
+        flex: 1;
     }
     
     nav ul li {
         width: 100%;
-        border-bottom: none; /* Remove the border */
-        margin-bottom: 25px; /* Add space between items */
+        margin-bottom: 35px;
+    }
+    
+    nav ul li:last-child {
+        margin-bottom: 0;
     }
     
     nav ul li a {
-        padding: 0; /* Remove padding */
-        font-size: 16px;
+        padding: 0;
+        font-size: 12px;
+        font-weight: bold;
         width: 100%;
         display: flex;
-        justify-content: space-between;
-        letter-spacing: 0.5px; /* Slight letter spacing for clean look */
+        justify-content: flex-start;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
     }
     
     .menu-plus {
-        display: inline-block;
+        display: none; /* Hide plus signs */
+    }
+    
+    /* Social Icons - Updated positioning */
+    .social-icons-menu {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        padding: 30px 20px;
+        border-top: none;
+        margin-top: auto;
+        height: auto;
+    }
+    
+    .social-icons-menu .social-icon {
+        color: #000;
+        font-size: 20px;
     }
     
     .hero-text {
@@ -750,8 +784,28 @@ footer {
         font-size: 0.875rem;
     }
     
+    .brand-info {
+        padding: 3.75rem 0;
+    }
+    
     .brand-info h1 {
         font-size: 2rem;
+    }
+    
+    /* UPDATED: Brand image mobile adjustment - aligned with slideshow */
+    .brand-info img {
+        max-width: 100%;
+        width: 70%;
+        margin-bottom: 2rem;
+    }
+    
+    .brand-description {
+        padding: 0 1.25rem;
+        font-size: 0.95rem;  /* Maintain the same size on tablet */
+    }
+    
+    .studio-location {
+        padding: 0 1.25rem;
     }
     
     /* Mobile Footer Styles */
@@ -840,6 +894,7 @@ footer {
         position: relative;
     }
     
+    /* FIXED: Updated submenu styles for mobile */
     .submenu {
         position: fixed;
         top: 0;
@@ -848,11 +903,11 @@ footer {
         bottom: 0;
         height: 100vh;
         width: 100%;
-        padding: 20px;
-        overflow-y: auto;
+        padding: 0;
+        overflow: hidden;
         transform: translateX(100%);
         transition: transform 0.3s ease;
-        display: block; /* Important: keep the submenu structure in DOM */
+        display: block;
         opacity: 0;
         visibility: hidden;
         z-index: 999;
@@ -868,27 +923,44 @@ footer {
         display: flex;
     }
     
+    /* FIXED: Make submenu-header sticky and properly positioned */
     .submenu-header {
         display: flex;
         position: sticky;
         top: 0;
+        left: 0;
+        right: 0;
         background: white;
-        z-index: 2;
-        padding: 15px 0;
+        z-index: 10;
+        padding: 15px 20px;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 0;
     }
     
+    /* FIXED: Add proper scrollable content area */
     .submenu-content {
-        padding: 15px 0;
+        padding: 20px 35px 30px 35px;
+        overflow-y: auto;
+        height: calc(100vh - 65px);
+        -webkit-overflow-scrolling: touch;
     }
     
     .categories-container {
         display: block;
-        margin-top: 20px;
+        margin-top: 0;
     }
     
     .collection-category {
         width: 100%;
-        margin-bottom: 40px;
+        margin-bottom: 35px;
+    }
+    
+    .collection-category h3 {
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
     }
     
     .subcategories {
@@ -897,12 +969,21 @@ footer {
     
     .subcategory {
         width: 100%;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
+    }
+    
+    .subcategory h4 {
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        color: #666;
     }
     
     /* Adjust collection slides for mobile */
     .collection-slide {
-        padding-top: 120%; /* Slightly shorter aspect ratio for mobile */
+        padding-top: 120%;
     }
 }
 
@@ -925,7 +1006,7 @@ footer {
     }
     
     .brand-info {
-        padding: 2.5rem 1.25rem;
+        padding: 2.5rem 0;
     }
     
     .brand-info h1 {
@@ -933,22 +1014,31 @@ footer {
         margin-bottom: 1.25rem;
     }
     
+    /* UPDATED: Brand image small mobile adjustment - wider and aligned */
+    .brand-info img {
+        max-width: 100%;
+        width: 85%;
+        margin-bottom: 1.5rem;
+    }
+    
+    .brand-description {
+        padding: 0 1.25rem;
+        font-size: 0.85rem;  /* Changed to match the mobile size from first CSS */
+        line-height: 1.6;  /* Changed to match the mobile line-height */
+        margin: 0 auto 1.25rem;  /* Adjusted margin for mobile */
+    }    
+    .studio-location {
+        padding: 0 1.25rem;
+    }
+    
     /* Adjust dot size and spacing for mobile */
     .slideshow-dots {
-        gap: 12px; /* Slightly reduced gap for mobile but still spacious */
+        gap: 12px;
     }
     
     .dot {
         height: 6px;
         width: 6px;
-    }
-    
-    .collection-category h3 {
-        font-size: 16px;
-    }
-    
-    .subcategory h4 {
-        font-size: 13px;
     }
     
     /* Footer adjustments for small mobile */
